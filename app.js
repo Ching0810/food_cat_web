@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
   res.redirect('/restaurants')
 })
 
+// { restaurants }: 用{ }把變數包起來，就可以在前端引入
 app.get('/restaurants', (req, res) => {
   res.render('index', { restaurants })
 })
