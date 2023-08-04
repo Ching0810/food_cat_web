@@ -37,7 +37,8 @@
     <div class="col-md-10 col-12 mx-auto">
       <div class="row row-cols-sm-3">
         {{#each restaurants as |restaurant|}}
-        <a href="/restaurants/{{restaurant.id}}" class="text-secondary">
+        {{!-- 下面一行表示：點擊會導向/restaurant/{{restaurant.id}}路由 --}}
+        <a href="/restaurant/{{restaurant.id}}" class="text-secondary">
           <div class="card mb-3">
             <img class="card-img-top" src="{{restaurant.image}}"
               alt={{restaurant.name}}>
