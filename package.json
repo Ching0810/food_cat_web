@@ -1,13 +1,16 @@
 {
   "name": "food_cat_web",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "food_cat_web exercise",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "keywords": [],
+  "keywords": [
+    "restaurant",
+    "list"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
