@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+// express.static is express build-in middleware function
+// after app.use(express.static('public')), server could access to file inside public direction
+app.use(express.static('public'))
+
 app.get('/', (req, res) => {
   res.redirect('/restaurants')
 })
