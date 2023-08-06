@@ -20,7 +20,12 @@ app.get('/', (req, res) => {
 app.get('/restaurants', (req, res) => {
   // keyword = req.query."search"要符合search bar中input的name，且會直接等於路由?之後的參數
   const keyword = req.query.search
-  const matchedRestaurants = keyword? restaurants.filter(restaurant => restaurant.name.toLowerCase().includes(keyword.toLowerCase())): restaurants
+  const matchedRestaurants = keyword? restaurants.filter(restaurant => Object.values(restaurant).some((property) => {
+    if (typeof (property) === 'string') {
+      return property.toLowerCase().includes(keyword.toLowerCase())
+    }
+    return false
+  })): restaurants
   // { restaurants: matchedRestaurants }就是object的key-value pair的意思，前端網頁可以引入key: restaurants把matched的餐廳帶入，所以key值restaurants跟變數restaurants無關，要改成什麼都可以，只要在前端引入正確的key值即可順利帶入
   res.render('index', { restaurants: matchedRestaurants, keyword })
 })
